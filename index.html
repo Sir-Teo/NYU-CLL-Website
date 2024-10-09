@@ -5,220 +5,392 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child Language Lab @ NYU Linguistics</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #57068c;
+            --secondary-color: #57be8e;
+            --accent-color: #f0c05a;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 0 20px;
         }
+        
         header {
-            background-color: #57068c; /* NYU purple */
+            background-color: var(--primary-color);
             color: white;
-            padding: 20px;
+            padding: 60px 0;
             text-align: center;
-            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
         nav {
-            background-color: #57be8e; /* Green from your logo */
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        
         nav ul {
             list-style-type: none;
-            padding: 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
         }
+        
         nav ul li {
-            margin: 5px;
+            margin: 5px 15px;
         }
+        
         nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 500;
         }
+        
         nav ul li a:hover {
-            background-color: #45967a;
+            background-color: white;
+            color: var(--secondary-color);
         }
+        
         main {
-            padding: 20px;
+            padding: 60px 0;
         }
+        
         .section {
             background-color: white;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        h1, h2, h3 {
-            color: #57068c;
-            font-weight: 700;
+        
+        p, ul {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
         }
+        
         .fun-fact {
-            background-color: #e8f4f8;
-            border-left: 4px solid #57be8e;
-            padding: 10px;
-            margin: 10px 0;
+            background-color: #fff3cd;
+            border-left: 6px solid var(--accent-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
+        
         .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 15px;
         }
-        footer {
-            background-color: #57068c;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 10px;
-            font-size: 0.9em;
-        }
+        
         .bubble {
             background-color: #f0f7fa;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 10px 0;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
             position: relative;
             font-style: italic;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        
         .bubble::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 30px;
-            border-width: 10px 10px 0;
+            bottom: -15px;
+            left: 50px;
+            border-width: 15px 15px 0;
             border-style: solid;
             border-color: #f0f7fa transparent;
         }
+        
         .btn {
             display: inline-block;
-            background-color: #57be8e;
+            background-color: var(--secondary-color);
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
         .btn:hover {
-            background-color: #45967a;
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background-color: #f0f7fa;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .section {
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Child Language Lab @ NYU Linguistics</h1>
-        <p>Exploring the wonders of language development</p>
+        <div class="container">
+            <h1>Child Language Lab @ NYU Linguistics</h1>
+            <p>Unlocking the mysteries of language acquisition, one word at a time</p>
+        </div>
     </header>
-    
+
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#people">People</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#participate">Participate</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#people">People</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#participate">Participate</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-    
-    <main>
+
+    <main class="container">
         <section id="home" class="section">
             <h2>Welcome to the Child Language Lab</h2>
-            <p>At the Child Language Lab, we investigate how children acquire and develop language skills. Our research combines playful exploration with rigorous scientific methods.</p>
-            <img src="/api/placeholder/400/300" alt="Children engaged in language activities" />
+            <p>At the Child Language Lab, we investigate how children acquire and develop language skills. Our research combines playful exploration with rigorous scientific methods to uncover the fascinating world of child language development.</p>
+            <img src="/api/placeholder/800/400" alt="Children engaged in language activities" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
             <div class="fun-fact">
                 <h3>Did You Know?</h3>
-                <p>Babies can distinguish between different languages even before they start speaking!</p>
+                <p>Babies can distinguish between different languages even before they start speaking! This incredible ability showcases the innate linguistic capabilities of the human brain.</p>
             </div>
         </section>
-        
+
         <section id="research" class="section">
             <h2>Our Research</h2>
-            <p>Our current projects focus on:</p>
+            <p>Our cutting-edge research focuses on various aspects of child language acquisition:</p>
             <ul>
                 <li>Early word acquisition processes</li>
                 <li>Bilingual language development</li>
                 <li>Phonological complexity in child speech</li>
+                <li>Acquisition of linguistic modality (e.g., must, have to, maybe)</li>
+                <li>Counterfactuality in language development</li>
+                <li>The role of learners in language change phenomena</li>
             </ul>
             <div class="bubble">
-                <p>"We're particularly interested in how children acquire complex linguistic structures." - Dr. Cournane</p>
+                <p>"We're particularly interested in how children acquire complex linguistic structures. Their incredible ability to learn language continues to amaze and inspire our research." - Dr. Cournane</p>
             </div>
         </section>
-        
+
         <section id="people" class="section">
             <h2>Meet Our Team</h2>
-            <p>Our lab brings together researchers at all levels:</p>
-            <ul>
-                <li>Dr. Ailís Cournane - Principal Investigator</li>
-                <li>Graduate Students - Research Associates</li>
-                <li>Undergraduate Assistants - Research Support</li>
-            </ul>
-            <p>Learn more about Dr. Cournane's work: <a href="https://wp.nyu.edu/cournane/" class="btn">Visit Her Website</a></p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/api/placeholder/300/300" alt="Dr. Ailís Cournane">
+                    <h3>Dr. Ailís Cournane</h3>
+                    <p>Principal Investigator</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/300/300" alt="Graduate Student">
+                    <h3>Jane Doe</h3>
+                    <p>Graduate Student</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/300/300" alt="Undergraduate Assistant">
+                    <h3>John Smith</h3>
+                    <p>Undergraduate Assistant</p>
+                </div>
+            </div>
+            <div style="background-color: #f0f7fa; padding: 30px; border-radius: 15px; margin-top: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                <h3>Dr. Ailís Cournane</h3>
+                <p>Associate Professor, Department of Linguistics, New York University</p>
+                <p>Affiliated Professor, Department of Psychology, New York University</p>
+                <a href="https://wp.nyu.edu/cournane/" class="btn" style="margin-top: 20px;">Visit Her Website</a>
+            </div>
         </section>
-        
+
         <section id="publications" class="section">
             <h2>Publications</h2>
-            <p>Recent publications from our lab:</p>
             <ul>
-                <li>Cournane, A. (2023). "Acquisition of Modal Semantics in Early Childhood"</li>
-                <li>Smith, J. & Cournane, A. (2022). "Cross-linguistic Patterns in Infant Babbling"</li>
+                <li>Cournane, A., & Hirzel, M., & Hacquard, V. (2024). "Mapping modal verbs to meanings: an elicited production study on "force" and "flavor" with young preschoolers". Language Acquisition 31 (1), 57-80</li>
+                <li>Cournane, A., & Klævik-Pettersen, E. (2023). "The role of the conservative learner in the rise and fall of verb-second". Journal of Historical Syntax 7 (6-19), 1-48</li>
+                <li>Tulling, M.A., & Cournane, A. (2022). "Wishes before ifs: mapping "fake" past tense to counterfactuality in wishes and conditionals". Language Development Research 2 (1), 306-355</li>
+                <!-- Add more publications as needed -->
             </ul>
+            <a href="#" class="btn" style="margin-top: 20px;">View All Publications</a>
         </section>
-        
+
         <section id="participate" class="section">
             <h2>Participate in Our Studies</h2>
             <p>We're always looking for young participants (ages 0-6) to help us uncover the mysteries of language acquisition. Participation is fun, educational, and contributes to important scientific research!</p>
+            <p>We conduct studies in various formats:</p>
+            <ul>
+                <li>In-lab studies</li>
+                <li>Off-site studies</li>
+                <li>ChildrenHelpingScience/LookIt online studies</li>
+                <li>Online studies via Zoom</li>
+            </ul>
             <div class="bubble">
-                <p>"Every child's participation helps us better understand language development." - Lab Team</p>
+                <p>"Every child's participation helps us better understand language development. Join us in this exciting journey of discovery!" - Lab Team</p>
             </div>
-            <p>Interested in contributing to our research? <a href="#contact" class="btn">Contact Us</a></p>
+            <a href="#contact" class="btn">Contact Us to Participate</a>
         </section>
-        
+
         <section id="resources" class="section">
             <h2>Educational Resources</h2>
-            <p>Explore our collection of language development videos:</p>
+            <p>Explore our collection of language development videos created by Dr. Cournane for Carousel of Languages. These informative videos offer insights into child language development for both parents and young learners.</p>
             <div class="video-container">
-                <iframe src="/api/placeholder/560/315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <img src="/api/placeholder/800/450" alt="Video placeholder" style="width: 100%; height: auto; border-radius: 15px;">
             </div>
-            <p>These informative videos, created by Dr. Cournane for Carousel of Languages, offer insights into child language development for both parents and young learners.</p>
+            <a href="#" class="btn" style="margin-top: 20px;">View More Resources</a>
         </section>
-        
+
         <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Get in touch with the Child Language Lab:</p>
-            <ul>
-                <li>Email: childlanguagelab@nyu.edu</li>
-                <li>Phone: (123) 456-7890</li>
-                <li>Address: New York University, Department of Linguistics</li>
-            </ul>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Child Language Lab @ NYU Linguistics. All rights reserved.</p>
-        <p>www.childlanguagelab.com</p>
-    </footer>
-</body>
-</html>
