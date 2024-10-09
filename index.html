@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Language Lab @ NYU Linguistics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #57068c; /* NYU purple */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        nav {
+            background-color: #57be8e; /* Green from your logo */
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 5px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+        nav ul li a:hover {
+            background-color: #45967a;
+        }
+        main {
+            padding: 20px;
+        }
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #57068c;
+            font-weight: 700;
+        }
+        .fun-fact {
+            background-color: #e8f4f8;
+            border-left: 4px solid #57be8e;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        footer {
+            background-color: #57068c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        .bubble {
+            background-color: #f0f7fa;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+            font-style: italic;
+        }
+        .bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 30px;
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: #f0f7fa transparent;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #57be8e;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #45967a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Child Language Lab @ NYU Linguistics</h1>
+        <p>Exploring the wonders of language development</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#people">People</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#participate">Participate</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="home" class="section">
+            <h2>Welcome to the Child Language Lab</h2>
+            <p>At the Child Language Lab, we investigate how children acquire and develop language skills. Our research combines playful exploration with rigorous scientific methods.</p>
+            <img src="/api/placeholder/400/300" alt="Children engaged in language activities" />
+            <div class="fun-fact">
+                <h3>Did You Know?</h3>
+                <p>Babies can distinguish between different languages even before they start speaking!</p>
+            </div>
+        </section>
+        
+        <section id="research" class="section">
+            <h2>Our Research</h2>
+            <p>Our current projects focus on:</p>
+            <ul>
+                <li>Early word acquisition processes</li>
+                <li>Bilingual language development</li>
+                <li>Phonological complexity in child speech</li>
+            </ul>
+            <div class="bubble">
+                <p>"We're particularly interested in how children acquire complex linguistic structures." - Dr. Cournane</p>
+            </div>
+        </section>
+        
+        <section id="people" class="section">
+            <h2>Meet Our Team</h2>
+            <p>Our lab brings together researchers at all levels:</p>
+            <ul>
+                <li>Dr. Ailís Cournane - Principal Investigator</li>
+                <li>Graduate Students - Research Associates</li>
+                <li>Undergraduate Assistants - Research Support</li>
+            </ul>
+            <p>Learn more about Dr. Cournane's work: <a href="https://wp.nyu.edu/cournane/" class="btn">Visit Her Website</a></p>
+        </section>
+        
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+            <p>Recent publications from our lab:</p>
+            <ul>
+                <li>Cournane, A. (2023). "Acquisition of Modal Semantics in Early Childhood"</li>
+                <li>Smith, J. & Cournane, A. (2022). "Cross-linguistic Patterns in Infant Babbling"</li>
+            </ul>
+        </section>
+        
+        <section id="participate" class="section">
+            <h2>Participate in Our Studies</h2>
+            <p>We're always looking for young participants (ages 0-6) to help us uncover the mysteries of language acquisition. Participation is fun, educational, and contributes to important scientific research!</p>
+            <div class="bubble">
+                <p>"Every child's participation helps us better understand language development." - Lab Team</p>
+            </div>
+            <p>Interested in contributing to our research? <a href="#contact" class="btn">Contact Us</a></p>
+        </section>
+        
+        <section id="resources" class="section">
+            <h2>Educational Resources</h2>
+            <p>Explore our collection of language development videos:</p>
+            <div class="video-container">
+                <iframe src="/api/placeholder/560/315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <p>These informative videos, created by Dr. Cournane for Carousel of Languages, offer insights into child language development for both parents and young learners.</p>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Get in touch with the Child Language Lab:</p>
+            <ul>
+                <li>Email: childlanguagelab@nyu.edu</li>
+                <li>Phone: (123) 456-7890</li>
+                <li>Address: New York University, Department of Linguistics</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Child Language Lab @ NYU Linguistics. All rights reserved.</p>
+        <p>www.childlanguagelab.com</p>
+    </footer>
+</body>
+</html>
