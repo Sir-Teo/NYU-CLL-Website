@@ -1,2 +1,2 @@
 # NYU-CLL-Website
-A website for NYU Child Language Lab
+A Website for NYU Child Language Lab
