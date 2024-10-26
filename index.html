@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child Language Lab @ NYU Linguistics</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 </head>
 <body>
     <header>
@@ -36,7 +38,7 @@
         <section id="home" class="section">
             <h2>Welcome to the Child Language Lab</h2>
             <p>At the Child Language Lab, we investigate how children acquire and develop language skills. Our research combines playful exploration with rigorous scientific methods to uncover the fascinating world of child language development.</p>
-            <img src="/api/placeholder/800/400" alt="Children engaged in language activities" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+            <img src="/api/placeholder/800/400" alt="Children engaged in language activities" class="featured-image">
             <div class="fun-fact">
                 <h3>Did You Know?</h3>
                 <p>Babies are born able to distinguish sounds from all languages, but by around 12 months, they specialize in the sounds of their native language, losing this universal ability.</p>
@@ -60,28 +62,58 @@
 
         <section id="people" class="section">
             <h2>Meet Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="/api/placeholder/300/300" alt="Dr. Ailís Cournane">
-                    <h3>Dr. Ailís Cournane</h3>
-                    <p>Principal Investigator</p>
+            <div class="team-section">
+                <button class="scroll-button left" aria-label="Scroll left">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scroll-icon">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="team-container">
+                    <div class="team-member">
+                        <img src="/api/placeholder/300/300" alt="Teo Zeng">
+                        <h3>Teo Zeng</h3>
+                        <p>Graduate Student</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/300/300" alt="Dr. Ailís Cournane">
+                        <h3>Dr. Ailís Cournane</h3>
+                        <p>Principal Investigator</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/300/300" alt="Sarah Johnson">
+                        <h3>Sarah Johnson</h3>
+                        <p>Research Assistant</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/300/300" alt="Michael Chen">
+                        <h3>Michael Chen</h3>
+                        <p>Graduate Student</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/300/300" alt="Emma Rodriguez">
+                        <h3>Emma Rodriguez</h3>
+                        <p>Lab Manager</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/300/300" alt="David Kim">
+                        <h3>David Kim</h3>
+                        <p>Research Assistant</p>
+                    </div>
                 </div>
-                <div class="team-member">
-                    <img src="/api/placeholder/300/300" alt="Graduate Student">
-                    <h3>Teo Zeng</h3>
-                    <p>Graduate Student</p>
-                </div>
-                <div class="team-member">
-                    <img src="/api/placeholder/300/300" alt="Undergraduate Assistant">
-                    <h3> Teo Zeng </h3>
-                    <p>Undergraduate Assistant</p>
-                </div>
+
+                <button class="scroll-button right" aria-label="Scroll right">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scroll-icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
-            <div style="background-color: #f0f7fa; padding: 30px; border-radius: 15px; margin-top: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+            
+            <div class="pi-profile">
                 <h3>Dr. Ailís Cournane</h3>
                 <p>Associate Professor, Department of Linguistics, New York University</p>
                 <p>Affiliated Professor, Department of Psychology, New York University</p>
-                <a href="https://wp.nyu.edu/cournane/" class="btn" style="margin-top: 20px;">Visit Her Website</a>
+                <a href="https://wp.nyu.edu/cournane/" class="btn">Visit Her Website</a>
             </div>
         </section>
 
@@ -100,7 +132,7 @@
                 <li>Cournane, A. (2021). "Revisiting the epistemic gap: It's not the thought that counts". Language Acquisition 28 (3), 215-240</li>
                 <li>Neural correlates of modal displacement and discourse-updating under (un) certainty</li>
             </ul>
-            <a href="#" class="btn" style="margin-top: 20px;">View All Publications</a>
+            <a href="#" class="btn">View All Publications</a>
         </section>
 
         <section id="participate" class="section">
@@ -123,9 +155,9 @@
             <h2>Educational Resources</h2>
             <p>Explore our collection of language development videos created by Dr. Cournane for Carousel of Languages. These informative videos offer insights into child language development for both parents and young learners.</p>
             <div class="video-container">
-                <img src="/api/placeholder/800/450" alt="Video placeholder" style="width: 100%; height: auto; border-radius: 15px;">
+                <img src="/api/placeholder/800/450" alt="Video placeholder">
             </div>
-            <a href="#" class="btn" style="margin-top: 20px;">View More Resources</a>
+            <a href="#" class="btn">View More Resources</a>
         </section>
 
         <section id="contact" class="section">
@@ -145,5 +177,36 @@
             <p>www.childlanguagelab.com</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.team-container');
+            const leftButton = document.querySelector('.scroll-button.left');
+            const rightButton = document.querySelector('.scroll-button.right');
+            const scrollAmount = 300;
+
+            leftButton.addEventListener('click', () => {
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            rightButton.addEventListener('click', () => {
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Update button visibility based on scroll position
+            container.addEventListener('scroll', () => {
+                leftButton.style.opacity = container.scrollLeft > 0 ? '1' : '0.5';
+                rightButton.style.opacity = 
+                    container.scrollLeft < (container.scrollWidth - container.clientWidth) 
+                    ? '1' : '0.5';
+            });
+        });
+    </script>
 </body>
 </html>
