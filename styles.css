@@ -222,6 +222,41 @@ p, ul {
     transform: translateY(-5px);
 }
 
+.team-member .image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+}
+
+.team-member .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+    transition: opacity 0.3s ease;
+}
+
+.team-member .image-container .adult-photo {
+    opacity: 1;
+}
+
+.team-member .image-container .baby-photo {
+    opacity: 0;
+}
+
+.team-member .image-container:hover .adult-photo {
+    opacity: 0;
+}
+
+.team-member .image-container:hover .baby-photo {
+    opacity: 1;
+}
+
 .team-member img {
     width: 150px;
     height: 150px;
@@ -557,4 +592,87 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 1rem;
+}
+
+/* Publications Section Styles */
+.publications-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.year-group {
+    margin-bottom: 2rem;
+}
+
+.year-group h3 {
+    color: #57068c;
+    border-bottom: 2px solid #57068c;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.publication-list {
+    list-style: none;
+    padding: 0;
+}
+
+.publication-item {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.pdf-link {
+    display: inline-block;
+    color: #57068c;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.pdf-link:hover {
+    color: #8c2bce;
+    text-decoration: underline;
+}
+
+.pdf-link:focus {
+    outline: 2px solid #57068c;
+    outline-offset: 2px;
+}
+
+/* Accessibility improvements */
+.pdf-link:focus-visible {
+    outline: 2px solid #57068c;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .publications-container {
+        padding: 0 1rem;
+    }
+    
+    .publication-item {
+        font-size: 0.95rem;
+    }
+}
+
+/* Award badge styling */
+.award {
+    display: inline-block;
+    background-color: #f0c05a;
+    color: #57068c;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin: 0 8px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .award {
+        display: block;
+        margin: 8px 0;
+        font-size: 0.85em;
+    }
 }
