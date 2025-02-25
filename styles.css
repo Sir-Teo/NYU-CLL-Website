@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #57068c;
-    --secondary-color: #475515;
+    --secondary-color: #4f6319;
     --accent-color: #f0c05a;
     --text-color: #333;
     --bg-color: #f9f9f9;
@@ -55,17 +55,20 @@ header::before {
 header .container {
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
     position: relative;
     z-index: 1;
+    padding: 0 20px;
 }
 
 .logo-cll {
@@ -84,6 +87,7 @@ header .container {
     flex-grow: 1;
     text-align: center;
     padding: 0 2rem;
+    max-width: 800px;
 }
 
 header h1 {
@@ -674,5 +678,38 @@ footer {
         display: block;
         margin: 8px 0;
         font-size: 0.85em;
+    }
+}
+
+/* Publication status tags */
+.pub-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.status-submitted {
+    background-color: #ffd7b5;
+    color: #d35400;
+}
+
+.status-resubmitted {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.status-in-prep {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+@media (max-width: 768px) {
+    .pub-status {
+        display: block;
+        margin: 4px 0;
+        font-size: 0.8em;
     }
 }
